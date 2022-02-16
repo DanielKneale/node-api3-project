@@ -66,7 +66,7 @@ router.delete('/:id',validateUserId, (req, res) => {
   // RETURN THE FRESHLY DELETED USER OBJECT
   Users.remove(req.params.id)
   .then(user =>{
-    res.status(200).json(user)
+    res.status(200).json(req.user)
   })
   .catch(err =>{
     console.log(err)
